@@ -3,10 +3,10 @@ from classes.songs import Song
 
 class TestSong(unittest.TestCase):
     def setUp(self):
-        self.song1 = Song("Livin' On a Prayer", "Bon Jovi", 180)
+        self.song1 = Song("Livin' On A Prayer", "Bon Jovi", 180)
 
     def test_song_has_name(self):
-        self.assertEqual("Livin' On a Prayer", self.song1.name)
+        self.assertEqual("Livin' On A Prayer", self.song1.name)
 
     def test_song_has_artist(self):
         self.assertEqual("Bon Jovi", self.song1.artist)
