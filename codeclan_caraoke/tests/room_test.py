@@ -26,6 +26,11 @@ class TestRoom(unittest.TestCase):
 
     def test_add_guest(self):
         self.room1.add_guest(self.guest1)
-        self.assertEqual("Donald", self.room1.guest_list[0].name)
+        self.assertEqual(1, self.room1.get_current_guest_count())
+
+    def test_remove_guest(self):
+        self.room1.add_guest(self.guest1)
+        self.room1.remove_guest(self.guest1)
+        self.assertEqual(0, self.room1.get_current_guest_count())
 
     
