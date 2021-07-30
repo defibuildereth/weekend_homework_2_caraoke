@@ -24,4 +24,8 @@ class TestRoom(unittest.TestCase):
         self.room1.play_song(self.song1)
         self.assertEqual("Livin' On A Prayer", self.room1.get_current_song())
 
+    def test_add_guest(self):
+        self.room1.add_guest(self.guest1)
+        self.assertEqual("Donald", self.room1.guest_list[0].name)
+
     
