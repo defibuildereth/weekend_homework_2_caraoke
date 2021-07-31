@@ -4,6 +4,7 @@ class Room:
         self.guest_list = []
         self.song_list = []
         self.capacity = capacity
+        self.till = 0
 
     def get_current_guest_count(self):
         return len(self.guest_list)
@@ -19,8 +20,10 @@ class Room:
 
     def add_guest(self, guest):
         if self.get_remaining_capacity() > 0:
-            self.guest_list.append(guest)
-            self.capacity -= 1
+            if guest.cash >= 20:
+                self.till += 20
+                self.guest_list.append(guest)
+                self.capacity -= 1
         else:
             return "Room full!"
 
@@ -29,3 +32,6 @@ class Room:
         
     def get_remaining_capacity(self):
         return self.capacity
+
+    def get_till(self):
+        return self.till

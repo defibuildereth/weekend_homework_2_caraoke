@@ -50,3 +50,10 @@ class TestRoom(unittest.TestCase):
         self.room1.add_guest(self.guest3)
         self.assertEqual("Room full!", self.room1.add_guest(self.guest4))
 
+    def test_room_has_till(self):
+        self.assertEqual(0, self.room1.get_till())
+
+    def test_add_guest_increases_till(self):
+        self.room1.add_guest(self.guest1)
+        self.assertEqual(20, self.room1.get_till())
+
