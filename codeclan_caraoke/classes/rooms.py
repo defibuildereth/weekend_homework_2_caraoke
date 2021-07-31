@@ -21,6 +21,7 @@ class Room:
     def add_guest(self, guest):
         if self.get_remaining_capacity() > 0:
             if guest.cash >= 20:
+                guest.reduce_cash(20)
                 self.till += 20
                 self.guest_list.append(guest)
                 self.capacity -= 1
