@@ -8,10 +8,10 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room1 = Room("The Lounge", 3)
         self.song1 = Song("Livin' On A Prayer", "Bon Jovi", 180)
-        self.guest1 = Guest("Donald", 31)
-        self.guest2 = Guest("Michelle", 29)
-        self.guest3 = Guest("Mags", 62)
-        self.guest4 = Guest("Cal", 34)
+        self.guest1 = Guest("Donald", 31, 100)
+        self.guest2 = Guest("Michelle", 29, 50)
+        self.guest3 = Guest("Mags", 62, 200)
+        self.guest4 = Guest("Cal", 34, 1)
 
 
     def test_room_has_name(self):
