@@ -38,3 +38,8 @@ class TestRoom(unittest.TestCase):
 
     def test_get_remaining_capacity_empty(self):
         self.assertEqual(3, self.room1.get_remaining_capacity())
+
+    def test_get_remaining_capacity_two_guests(self):
+        self.room1.add_guest(self.guest1)
+        self.room1.add_guest(self.guest2)
+        self.assertEqual(1, self.room1.get_remaining_capacity())
