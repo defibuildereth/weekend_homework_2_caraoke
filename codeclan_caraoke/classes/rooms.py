@@ -26,6 +26,8 @@ class Room:
                 self.till += self.entry_fee
                 self.guest_list.append(guest)
                 self.capacity -= 1
+            else:
+                return "Not enough cash!"
         else:
             return "Room full!"
 

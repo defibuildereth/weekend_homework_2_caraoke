@@ -61,3 +61,6 @@ class TestRoom(unittest.TestCase):
         self.room1.add_guest(self.guest1)
         self.assertEqual(80, self.guest1.cash)
 
+    def test_add_guest_only_if_has_cash(self):
+        self.assertEqual("Not enough cash!", self.room1.add_guest(self.guest4))
+
