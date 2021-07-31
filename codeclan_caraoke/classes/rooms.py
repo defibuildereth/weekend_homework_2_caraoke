@@ -18,8 +18,11 @@ class Room:
         self.song_list.append(song)
 
     def add_guest(self, guest):
-        self.guest_list.append(guest)
-        self.capacity -= 1
+        if self.get_remaining_capacity() > 0:
+            self.guest_list.append(guest)
+            self.capacity -= 1
+        else:
+            return "Room full!"
 
     def remove_guest(self, guest):
         self.guest_list.remove(guest)

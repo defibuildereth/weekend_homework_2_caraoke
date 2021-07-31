@@ -43,3 +43,10 @@ class TestRoom(unittest.TestCase):
         self.room1.add_guest(self.guest1)
         self.room1.add_guest(self.guest2)
         self.assertEqual(1, self.room1.get_remaining_capacity())
+
+    def test_room_full(self):
+        self.room1.add_guest(self.guest1)
+        self.room1.add_guest(self.guest2)
+        self.room1.add_guest(self.guest3)
+        self.assertEqual("Room full!", self.room1.add_guest(self.guest4))
+
